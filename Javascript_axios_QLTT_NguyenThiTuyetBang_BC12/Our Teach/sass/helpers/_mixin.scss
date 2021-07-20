@@ -1,0 +1,67 @@
+@mixin styleText($fs, $fw, $color) {
+    font-size:$fs;
+    font-weight:$fw;
+    color:$color;
+    
+}
+@mixin styleButton($bg, $py,$px, $border, $br-radius) {
+    background: $bg;
+    padding: $py $px;
+    border: $border,;
+    border-radius: $br-radius;
+}
+@mixin styleButtonHover($bg, $bd-color, $color) {
+    background:$bg ;
+    border-color:$bd-color;
+    color:$color;
+}
+@mixin responsive($screen) {
+    @if (map-has-key($map: $breakpoints, $key: $screen)) {
+        $value: map-get($map: $breakpoints, $key: $screen);
+        @media screen and (max-width: $value) {
+            @content;
+        }
+    }@else{
+        @warn 'Screen does not exits!';
+    }
+}
+@mixin responsive_320() {
+    @media #{$res_320} {
+        @content;
+    }
+}
+@mixin responsive_375() {
+    @media #{$res_375} {
+        @content;
+    }
+}
+@mixin responsive_425() {
+    @media #{$res_425} {
+        @content;
+    }
+}
+@mixin responsive_992() {
+    @media #{$res_992} {
+        @content;
+    }
+}
+@mixin responsive_1024() {
+    @media #{$res_1024} {
+        @content;
+    }
+}
+@mixin responsive_1200() {
+    @media #{$res_1200} {
+        @content;
+    }
+}
+@mixin responsive_411() {
+    @media #{$res_411} {
+        @content;
+    }
+}
+@mixin responsive_769() {
+    @media #{$res_769} {
+        @content;
+    }
+}

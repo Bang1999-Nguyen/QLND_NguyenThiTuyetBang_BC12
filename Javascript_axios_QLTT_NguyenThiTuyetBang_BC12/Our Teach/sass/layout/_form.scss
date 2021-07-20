@@ -1,0 +1,800 @@
+.form {
+    height:100%;
+    margin-top: 400px;
+    position: relative;
+    z-index: 2;
+    width:100%;
+    max-width:100%;
+    .col-md-4{
+        display :flex;
+        padding:40px 20px;
+        border-radius: 20px;
+        background-color: white;
+        margin-left:-100px;-webkit-box-shadow: 2px 10px 15px -7px #000000; 
+        box-shadow: 0 30px 30px -10px rgb(0 0 0 / 20%);
+        i{
+            position:absolute;
+            padding:10px 14px;
+            color:$color-pink-1;
+        }
+        h3{
+            @include styleText(36px, $fw-3, $color-dark-3);
+            padding:$pd-1 0;
+            letter-spacing: 3px;
+        }
+        input{
+            border-radius: 20px;
+            padding:10px 36px;
+            height:100%;
+            width:150px;
+            margin-right:10px;
+            border:0.5px solid $color-gray-1;
+            font-size: 14px;
+            outline:none;
+        }
+        .icon{
+            i{
+                position:absolute;
+                z-index:900;
+                left:40px;
+                top:213px;
+            }
+        }
+        .custom{
+            position: relative;
+            font-family: Arial;
+            margin:40px 0 10px 0;
+          }
+          
+          .custom select {
+            display: none; /*hide original SELECT element:*/
+            color:gray;
+          }
+          
+          .select-selected {
+            background-color: transparent;
+            border:1px solid gray;
+            width:310px;
+          }
+          
+          /*style the arrow inside the select element:*/
+          .select-selected:after {
+            content: "";
+            position:absolute;
+            top: 18px;
+            right: 60px;
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-color: $color-pink-1 transparent transparent transparent;
+          }
+          
+          /*point the arrow upwards when the select box is open (active):*/
+          .select-selected.select-arrow-active:after {
+            border-color: transparent transparent $color-pink-1 transparent;
+            top: 7px;
+          }
+          
+          /*style the items (options), including the selected item:*/
+         .select-selected {
+            padding: 8px 14px 8px 50px;
+            border:0.5px solid $color-gray-1;
+            border-radius: 60px;
+            color:gray;
+            cursor: pointer;
+            user-select: none;
+            font-size:14px;
+          }
+          .select-items div{
+              border:none;
+              background-color: white;
+              padding: 6px 16px 5px 50px;
+              font-size:14px;
+            //   margin-left:30px;
+          }
+          
+          /*style items (options):*/
+          .select-items {
+            position: absolute;
+            background-color: transparent;
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 99;
+            font-size:14px;
+            color:gray;
+            border:$color-gray-1;
+          }
+          
+          /*hide the items when the select box is closed:*/
+          .select-hide {
+            display: none;
+          }
+        textarea {
+            margin-top:20px;
+            border:0.5px solid $color-gray-1;
+            font-size: 14px;
+            border-radius: 20px;
+            padding: 10px 30px 20px 40px;
+            outline:none;
+        }
+        .message{
+            i{
+                padding:32px 20px;
+                color:$color-pink-1;
+            }
+        }
+        .contact__name, .contact__email{
+            float:left;
+            margin-bottom:10px;
+        }
+        .custom-btn{
+            // color:$color-white-3;
+            padding:10px 50px;
+            background: $color-pink-1;
+            border-radius: 50px;
+            border:0.5px  $color-gray-1;
+            transition: all 300ms ease;
+            @include styleText(16px, $fw-2, $color-white-3);
+            letter-spacing: $ls-2;
+            overflow: hidden;
+            position: relative;
+            outline: none;
+            display: inline-block;
+        }
+        .btn-send{
+            border:none;
+            &:before{
+                position: absolute;
+                content: " ";
+                top: 0;
+                left: 0;
+                z-index: -1;
+                width: 100%;
+                height: 100%;
+                transition: all 300ms ease;
+                -webkit-transform: scale(0.1);
+                      transform: scale(0.1);
+            }
+            &:hover{
+                color:$color-pink-1;
+                background-color: transparent;
+                box-shadow: 0 0 0 1px #b61984 inset;
+                &:before{
+                    background-color: $color-pink-1;
+                     box-shadow: 0 0 0 3em #fff inset;
+                    -webkit-transform: scale(1);
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+    .col-md-8{
+        img{
+            position:absolute;
+            top:60px;
+            left:100px;
+        }
+    }
+
+  
+   
+}
+// responsive
+
+@include responsive("small"){
+    ._form{
+        height:1200px;
+    }
+    .form{
+        .row{
+            .team__work{
+                position:absolute;
+                top:-100px;
+                width:80%;
+                display:block;
+                margin:0 -35px;
+            }
+            .form__content{
+                position:absolute;
+                top:300px;
+                width:90%;
+                left:30px;
+                margin:0 auto;
+                h3{
+                    text-align:left;
+                    font-size:28px;
+                }
+                input{
+                    display:inline-block;
+                    width:370px;
+                    margin:10px 0;
+                }
+                .select-selected{
+                    margin-top:120px;
+                    width:370px;
+                    height:40px;
+                }
+                textarea{
+                    width:370px;
+                }
+                button{
+                    width:370px;
+                }
+            }
+            .col-md-4{
+                .fa-user{
+                    position:absolute;
+                    top:140px;
+                }
+                .fa-envelope{
+                    position:absolute;
+                    top:210px;
+                }
+                .icon{
+                    i{
+                        position:absolute;
+                        top:280px;
+                    }
+                }
+                .select-selected:after{
+                    right:10px;
+                }
+            }
+        }
+        
+    }
+}
+@include responsive ('super-small') {
+    ._form{
+        height:600px;
+        margin-bottom: 350px;
+        .row{
+            .team__work{
+                width:100%;
+                max-width:100%;
+                margin:0 -90px;
+            }
+            .container{
+                max-width:376px;
+                max-width:100%;
+                .form__info{
+                    text-align: center;
+                    display:flex;
+                    flex-direction: column;
+                    h3{
+                        font-size:21px;
+                        text-align:center;
+                    }
+                    .info{
+                        .contact__name{
+                        input{
+                            width:280px;
+                            margin-bottom:20px;
+                            }
+                        }
+                        .contact__email{
+                        input{
+                            width:280px;
+                            margin-bottom:20px;
+                            margin-top:-10px;
+                            }
+                        }
+                        .contact__email i{
+                            position:absolute;
+                            top:200px;
+                        }
+                    }
+
+                }
+                .custom{
+                    // width:200px;
+                    // margin-top:-30px;
+                    position:relative;
+                    select{
+                        option{
+                            text-align:left;
+                        }
+                    }
+                }
+                textarea{
+                    width:280px;
+                    margin-top:-30px;
+                }
+                .textarea i{
+                    position:absolute;
+                    top:-100px;
+                }
+                .select-selected{
+                    width:280px;
+                    height:40px;
+                    margin-top:-80px;
+                }
+                 .select-selected {
+                     text-align:left;
+                 }
+                 .select-selected:after {
+                     position:absolute;
+                     right:10px;
+                     top:-60px;
+                 }
+                 .select-items{
+                     text-align:left;
+                 }
+                .icon{
+                    // top:59px;
+                    left:0px;
+                    top:-25px;
+                    position:absolute;
+                }
+                .custom-btn{
+                    width:280px;
+                }
+            }
+            .col-md-4{
+                width:330px;
+                margin:0 -10px;
+              }
+        }
+    }
+}
+@include responsive_375{
+    .form{
+        height:1000px;
+        .row{
+            display:grid;
+            grid-template-columns: repeat(1, 1fr);
+            .team__work{
+                width:100%;
+                max-width:70%;
+                margin:0 20px;
+                margin-top:-240px;
+            }
+            .container{
+                .form__info{
+                    text-align: center;
+                    display:flex;
+                    flex-direction: column;
+                    h3{
+                        font-size:35px;
+                        text-align:left;
+                    }
+                    .info{
+                        .contact__name{
+                        input{
+                            width:480px;
+                            margin-bottom:20px;
+                        }
+                        }
+                        .contact__name i{
+                            position:absolute;
+                            left:40px;
+                        }
+                        .contact__email{
+                        input{
+                            width:480px;
+                            margin-bottom:20px;
+                        }
+                        }
+                    }
+
+                }
+                .custom{
+                    // width:200px;
+                    margin-top:-30px;
+                    position:relative;
+                    select{
+                        option{
+                            text-align:left;
+                        }
+                    }
+                }
+                textarea{
+                    width:480px;
+                }
+                .select-selected{
+                    width:480px;
+                    height:40px;
+                }
+                 .select-selected {
+                     text-align:left;
+                 }
+                 .select-selected:after {
+                     position:absolute;
+                     right:50px;
+                     top:14px;
+                 }
+                 .select-items{
+                     text-align:left;
+                 }
+                .icon{
+                    // top:59px;
+                    left:2px;
+                    top:64px;
+                    position:absolute;
+                }
+            }
+            .col-md-4{
+                width:580px;
+                margin-left:30px;
+                margin-top:390px;
+              }
+        }
+    }
+}
+@include responsive_425{
+    .form{
+        height:1000px;
+        .row{
+            display:grid;
+            grid-template-columns: repeat(1, 1fr);
+            .team__work{
+                width:100%;
+                max-width:100%;
+                margin:0 60px;
+                margin-top:-150px;
+            }
+            .container{
+                .form__info{
+                    text-align: center;
+                    display:flex;
+                    flex-direction: column;
+                    h3{
+                        font-size:35px;
+                        text-align:left;
+                    }
+                    .info{
+                        .contact__name{
+                        input{
+                            width:600px;
+                            margin-bottom:20px;
+                        }
+                        }
+                        .contact__name i{
+                            position:absolute;
+                            left:40px;
+                        }
+                        .contact__email{
+                        input{
+                            width:600px;
+                            margin-bottom:20px;
+                        }
+                        }
+                    }
+
+                }
+                .custom{
+                    // width:200px;
+                    margin-top:-30px;
+                    position:relative;
+                    select{
+                        option{
+                            text-align:left;
+                        }
+                    }
+                }
+                textarea{
+                    width:600px;
+                    margin-left:-20px;
+                }
+                .message {
+                    i{
+                        position:absolute;
+                        left:30px;
+                    }
+                }
+                .select-selected{
+                    width:600px;
+                    height:40px;
+                }
+                 .select-selected {
+                     text-align:left;
+                 }
+                 .select-selected:after {
+                     position:absolute;
+                     right:50px;
+                     top:14px;
+                 }
+                 .select-items{
+                     text-align:left;
+                 }
+                .icon{
+                    // top:59px;
+                    left:2px;
+                    top:64px;
+                    position:absolute;
+                }
+            }
+            .col-md-4{
+                max-width:700px;
+                margin-left:40px;
+                margin-top:500px;
+              }
+        }
+    }
+}
+@include responsive_1024{
+    .form{
+        height:800px;
+        .row{
+            display:block;
+            .team__work{
+                width:100%;
+                max-width:80%;
+                margin-top:80px;
+                margin-right:30px;
+            }
+            .container{
+                .form__info{
+                    text-align: center;
+                    display:flex;
+                    flex-direction: column;
+                    h3{
+                        font-size:35px;
+                        text-align:left;
+                    }
+                    .info{
+                        .contact__name{
+                        input{
+                            width:300px;
+                            margin-bottom:20px;
+                        }
+                        }
+                        .contact__name i{
+                            position:absolute;
+                            left:40px;
+                        }
+                        .contact__email{
+                        input{
+                            width:300px;
+                            margin-bottom:20px;
+                        }
+                        }
+                    }
+
+                }
+                .custom{
+                    // width:200px;
+                    margin-top:-30px;
+                    position:relative;
+                    select{
+                        option{
+                            text-align:left;
+                        }
+                    }
+                }
+                textarea{
+                    width:300px;
+                    margin-left:-20px;
+                }
+                .message {
+                    i{
+                        position:absolute;
+                        left:30px;
+                    }
+                }
+                .select-selected{
+                    width:300px;
+                    height:40px;
+                }
+                 .select-selected {
+                     text-align:left;
+                 }
+                 .select-selected:after {
+                     position:absolute;
+                     right:50px;
+                     top:14px;
+                 }
+                 .select-items{
+                     text-align:left;
+                 }
+                .icon{
+                    // top:59px;
+                    left:2px;
+                    top:64px;
+                    position:absolute;
+                }
+            }
+            .col-md-4{
+                max-width:400px;
+                margin-left:640px;
+                margin-top:200px;
+              }
+        }
+    }
+}
+@include responsive_411{
+    .form{
+        height:600px;
+        .row{
+            display:block;
+            .team__work{
+                width:100%;
+                max-width:80%;
+                margin-top:80px;
+                margin-right:30px;
+            }
+            .container{
+                .form__info{
+                    text-align: center;
+                    display:flex;
+                    flex-direction: column;
+                    h3{
+                        font-size:25px;
+                        text-align:left;
+                    }
+                    .info{
+                        .contact__name{
+                        input{
+                            width:300px;
+                            // margin-bottom:20px;
+                        }
+                        }
+                        .contact__name i{
+                            position:absolute;
+                            left:40px;
+                        }
+                        .contact__email{
+                        input{
+                            width:300px;
+                            // margin-bottom:10px;
+                            }
+                        }
+                        .contact__email i{
+                            position:absolute;
+                            top:210px;
+                        }
+                    }
+
+                }
+                .custom{
+                    // width:200px;
+                    margin-top:-30px;
+                    position:relative;
+                    select{
+                        option{
+                            text-align:left;
+                        }
+                    }
+                }
+                textarea{
+                    width:300px;
+                    margin-left:-20px;
+                }
+                .message {
+                    i{
+                        position:absolute;
+                        left:30px;
+                    }
+                }
+                .select-selected{
+                    width:300px;
+                    height:40px;
+                    margin-top:10px;
+                }
+                 .select-selected {
+                     text-align:left;
+                 }
+                 .select-selected:after {
+                     position:absolute;
+                     right:20px;
+                     top:30px;
+                 }
+                 .select-items{
+                     text-align:left;
+                 }
+                .icon{
+                    // top:59px;
+                    left:2px;
+                    top:0px;
+                    position:absolute;
+                }
+                .custom-btn{
+                    width:300px;
+                }
+            }
+            .col-md-4{
+                max-width:400px;
+              }
+        }
+    }
+}
+@include responsive_375{
+    .form{
+        height:1200px;
+        .row{
+            display:grid;
+            grid-template-columns: repeat(1,1fr);
+            .team__work{
+                width:100%;
+                max-width:100%;
+                margin-top:-80px;
+                margin-right:30px;
+            }
+            .container{
+                .form__info{
+                    text-align: center;
+                    display:flex;
+                    flex-direction: column;
+                    h3{
+                        font-size:45px;
+                        text-align:left;
+                    }
+                    .info{
+                        .contact__name{
+                        input{
+                            width:500px;
+                            // margin-bottom:20px;
+                        }
+                        }
+                        .contact__name i{
+                            position:absolute;
+                            left:40px;
+                        }
+                        .contact__email{
+                        input{
+                            width:500px;
+                            // margin-bottom:10px;
+                            }
+                        }
+                        .contact__email i{
+                            position:absolute;
+                            top:220px;
+                        }
+                    }
+
+                }
+                .custom{
+                    // width:200px;
+                    margin-top:-30px;
+                    position:relative;
+                    select{
+                        option{
+                            text-align:left;
+                        }
+                    }
+                }
+                textarea{
+                    width:500px;
+                    margin-left:-20px;
+                }
+                .message {
+                    i{
+                        position:absolute;
+                        left:30px;
+                    }
+                }
+                .select-selected{
+                    width:500px;
+                    height:40px;
+                    margin-top:10px;
+                }
+                 .select-selected {
+                     text-align:left;
+                 }
+                 .select-selected:after {
+                     position:absolute;
+                     right:20px;
+                     top:30px;
+                 }
+                 .select-items{
+                     text-align:left;
+                 }
+                .icon{
+                    // top:59px;
+                    left:2px;
+                    top:90px;
+                    position:absolute;
+                }
+                .custom-btn{
+                    width:500px;
+                }
+            }
+            .col-md-4{
+                max-width:1300px;
+                margin-top:600px;
+                margin-left:80px;
+            }
+        }
+    }
+}

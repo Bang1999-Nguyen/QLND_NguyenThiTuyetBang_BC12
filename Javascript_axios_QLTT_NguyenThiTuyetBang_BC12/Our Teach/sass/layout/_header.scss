@@ -1,0 +1,581 @@
+
+#header__content {
+    position: absolute;
+    display : block;
+    z-index:900;
+    top:0px;
+    width:100%;
+    transition:all 0.6s;
+    margin:0 auto;
+    max-width: 100%;
+    #navbarHeader .nav-link {
+        @include styleText($fs-1, $fw-1, $color-dark-4);
+        padding-right: 1.6rem;
+        padding-left: 1.6rem;
+        a{
+            line-height:80px;
+        }
+        &:hover{
+            color:$color-pink-1;
+        }
+    }
+    #navbarHeader{
+        ._telephone__small{
+            .custom-btn{
+                color:$color-white-3;
+                padding:8px 20px;
+                background: $color-pink-1;
+                font-size:14px;
+                border-radius: 80px;
+                border:0.5px  $color-gray-1;
+                transition: all 300ms ease;
+                overflow: hidden;
+                position: relative;
+                outline: none;
+                display: inline-block;
+                span{
+                    i{
+                        padding:0 5px;
+                    }
+                }
+            }
+            .btn-contact{
+                &:before{
+                    position: absolute;
+                    content: " ";
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                    width: 100%;
+                    height: 100%;
+                    transition: all 300ms ease;
+                    -webkit-transform: scale(.05);
+                          transform: scale(.05);
+                }
+                &:hover{
+                    color:$color-pink-1;
+                    background-color: transparent;
+                    box-shadow: 0 0 0 1px #b61984 inset;
+                    &:before{
+                        background-color: $color-pink-1;
+                         box-shadow: 0 0 0 3em #fff inset;
+                        -webkit-transform: scale(1);
+                        transform: scale(1);
+                    }
+                }
+                &:focus {
+                    &:before {
+                      transition:2s all ease;
+                      left:0;
+                      right:0;
+                      opacity:1;
+                    }
+                }
+            }
+        }
+    }
+    .contact__small {
+        padding:0 20px;
+        i{
+            padding: 0 5px;
+            font-size: $fs-1;
+        }
+    }
+    #navbarHeader {
+        .image__select{
+            display:none;
+        }
+    }
+    .nav-bar-btn{
+               font-size:30px;
+               display:none;
+               color:black;
+    }
+    .nav-bar-close{
+        font-size:30px;
+        display:none;
+        color:black;
+    }
+    #nav-input{
+        display:none;
+    }
+    .navbar-mobile{
+        display:none;
+    }
+    .nav-mobile:checked ~ .navbar-mobile {
+        transform: translateX(0%);
+    }
+    .nav-mobile:checked ~ .nav-bar-close {
+        transform: translateX(0%);
+    
+    }
+    .teamNav{
+        img{
+            margin-top:-10px;
+        }
+    }
+    .teamNav-scroll{
+        display:none;
+    }
+    
+}
+// responsive
+@include responsive("small"){
+    #header__content{
+        position: absolute;
+        right:85px;
+        top:80px;
+    .teamNav{
+        img{
+            position:absolute;
+            top:0px;
+            left:150px;
+            height:48px;
+            max-width:100%;
+        }
+        .nav-bar-btn{
+            display:block;
+            position:absolute;
+            left:100px;
+            top:0px;
+            }
+    }
+    .navbar-mobile{
+        img{
+            margin:20px 110px;
+            width:30%;
+        }
+        li{
+            list-style: none;
+            text-align:center;
+            margin:15px 0;
+            a{
+                font-size:14px;
+                text-decoration: none;
+                color:black;
+                line-height:5px;
+                font-weight:400;
+                padding:10px 15px;
+                letter-spacing: $ls-2;
+            }
+        }
+        ._telephone__small{
+            text-align:center;
+            border:$bd-1;
+            background-color: $color-pink-1;
+            border-radius: 50px;
+            padding: 10px 0;
+            transition:all 0.5s;
+            width:190px;
+            margin:40px auto 20px auto;
+            a{
+                text-decoration: none;
+                color:white;
+                font-size:14px;
+            }
+        }
+        .contact__small__mobile{
+            text-align:center;
+            margin:20px 90px;
+            i{
+                margin-right:13px;
+            }
+        }
+    }
+    .navbar-mobile {
+        position:fixed;
+        top:0;
+        left:0;
+        bottom:0;
+        background-color: $color-white-1;
+        height:100%;
+        width:320px;
+        max-width:100%;
+        transform: translateX(-140%);
+        display:block;
+        transition: transform linear 0.5s;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        .nav-bar-btn{
+            display:block;
+            position:absolute;
+            left:100px;
+            top:0px;
+            }
+        }
+        .nav-bar-close{
+            font-size:30px;
+            display:block;
+            position:fixed;
+            top:0px;
+            right:0px;
+            color:black;
+            background-color: $color-white-2;
+            z-index:20;
+            padding:5px 125px 5px 10px;
+            transform: translateX(120%);
+            transition: transform linear 0.5s;
+        }
+    }
+}
+@include responsive('super-small') {
+    #header__content{
+        position:fixed;
+        top:20px;
+        .nav-bar-btn{
+            position:absolute;
+            top:10px;
+        }
+        .image__header{
+            top:-20px;
+        }
+    }
+    #header__content{
+        .container{
+        max-width:376px;
+        }
+    }
+}
+@include responsive('medium') {
+    #header__content{
+        position: absolute;
+        right:85px;
+        top:80px;
+    .teamNav{
+        img{
+            position:absolute;
+            top:20px;
+            left:150px;
+            height:48px;
+            max-width:100%;
+        }
+        .nav-bar-btn{
+            display:block;
+            position:absolute;
+            left:100px;
+            top:20px;
+            }
+        #navbarHeader{
+            ul{
+                display:none;
+            }
+            ._telephone__small{
+                display:none;
+            }
+            .contact__small{
+                display:none;
+            }
+        }
+    }
+    .navbar-mobile{
+        img{
+            margin:30px 110px;
+            width:30%;
+        }
+        li{
+            list-style: none;
+            text-align:center;
+            margin:15px 0;
+            a{
+                font-size:14px;
+                text-decoration: none;
+                color:black;
+                line-height:5px;
+                font-weight:400;
+                padding:10px 15px;
+                letter-spacing: $ls-2;
+            }
+        }
+        ._telephone__small{
+            text-align:center;
+            border:$bd-1;
+            background-color: $color-pink-1;
+            border-radius: 50px;
+            padding: 10px 0;
+            transition:all 0.5s;
+            width:190px;
+            margin:40px auto 20px auto;
+            a{
+                text-decoration: none;
+                color:white;
+                font-size:14px;
+            }
+        }
+        .contact__small__mobile{
+            text-align:center;
+            margin:20px 90px;
+            i{
+                margin-right:13px;
+            }
+        }
+    }
+    .navbar-mobile {
+        position:fixed;
+        top:0;
+        left:0;
+        bottom:0;
+        background-color: $color-white-1;
+        height:100%;
+        width:320px;
+        max-width:100%;
+        transform: translateX(-140%);
+        display:block;
+        transition: transform linear 0.5s;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        .nav-bar-btn{
+            display:block;
+            position:absolute;
+            left:100px;
+            top:0px;
+            }
+        }
+        .nav-bar-close{
+            font-size:30px;
+            display:block;
+            position:fixed;
+            top:0px;
+            right:0px;
+            color:black;
+            background-color: $color-white-2;
+            z-index:20;
+            padding:5px 125px 5px 10px;
+            transform: translateX(120%);
+            transition: transform linear 0.5s;
+        }
+    }
+}
+@include responsive_425{
+    #header__content{
+        position: absolute;
+        right:85px;
+        top:80px;
+    .teamNav{
+        ul{
+            display:none;
+        }
+        .contact__small{
+            display:none;
+        }
+        ._telephone__small{
+            display:none;
+        }
+        img{
+            position:absolute;
+            top:20px;
+            left:150px;
+            height:48px;
+            max-width:100%;
+        }
+        .nav-bar-btn{
+            display:block;
+            position:absolute;
+            left:100px;
+            top:20px;
+            }
+    }
+    .navbar-mobile{
+        img{
+            margin:20px 110px;
+            width:30%;
+        }
+        li{
+            list-style: none;
+            text-align:center;
+            margin:15px 0;
+            a{
+                font-size:14px;
+                text-decoration: none;
+                color:black;
+                line-height:5px;
+                font-weight:400;
+                padding:10px 15px;
+                letter-spacing: $ls-2;
+            }
+        }
+        ._telephone__small{
+            text-align:center;
+            border:$bd-1;
+            background-color: $color-pink-1;
+            border-radius: 50px;
+            padding: 10px 0;
+            transition:all 0.5s;
+            width:190px;
+            margin:40px auto 20px auto;
+            a{
+                text-decoration: none;
+                color:white;
+                font-size:14px;
+            }
+        }
+        .contact__small__mobile{
+            text-align:center;
+            margin:20px 90px;
+            i{
+                margin-right:13px;
+            }
+        }
+    }
+    .navbar-mobile {
+        position:fixed;
+        top:0;
+        left:0;
+        bottom:0;
+        background-color: $color-white-1;
+        height:100%;
+        width:320px;
+        max-width:100%;
+        transform: translateX(-140%);
+        display:block;
+        transition: transform linear 0.5s;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        .nav-bar-btn{
+            display:block;
+            position:absolute;
+            left:100px;
+            top:0px;
+            }
+        }
+        .nav-bar-close{
+            font-size:30px;
+            display:block;
+            position:fixed;
+            top:0px;
+            right:0px;
+            color:black;
+            background-color: $color-white-2;
+            z-index:20;
+            padding:5px 125px 5px 10px;
+            transform: translateX(120%);
+            transition: transform linear 0.5s;
+        }
+    }
+    
+}
+@include responsive_1024{
+    #header__content{
+        position: absolute;
+        right:85px;
+        top:80px;
+    .teamNav{
+        ul{
+            display:none;
+        }
+        .contact__small{
+            display:none;
+        }
+        ._telephone__small{
+            display:none;
+        }
+        img{
+            position:absolute;
+            top:20px;
+            left:150px;
+            height:48px;
+            max-width:100%;
+        }
+        .nav-bar-btn{
+            display:block;
+            position:absolute;
+            left:100px;
+            top:20px;
+            }
+    }
+    .navbar-mobile{
+        img{
+            margin:20px 110px;
+            width:30%;
+        }
+        li{
+            list-style: none;
+            text-align:center;
+            margin:15px 0;
+            a{
+                font-size:14px;
+                text-decoration: none;
+                color:black;
+                line-height:5px;
+                font-weight:400;
+                padding:10px 15px;
+                letter-spacing: $ls-2;
+            }
+        }
+        ._telephone__small{
+            text-align:center;
+            border:$bd-1;
+            background-color: $color-pink-1;
+            border-radius: 50px;
+            padding: 10px 0;
+            transition:all 0.5s;
+            width:190px;
+            margin:40px auto 20px auto;
+            a{
+                text-decoration: none;
+                color:white;
+                font-size:14px;
+            }
+        }
+        .contact__small__mobile{
+            text-align:center;
+            margin:20px 90px;
+            i{
+                margin-right:13px;
+            }
+        }
+    }
+    .navbar-mobile {
+        position:fixed;
+        top:0;
+        left:0;
+        bottom:0;
+        background-color: $color-white-1;
+        height:100%;
+        width:320px;
+        max-width:100%;
+        transform: translateX(-140%);
+        display:block;
+        transition: transform linear 0.5s;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        .nav-bar-btn{
+            display:block;
+            position:absolute;
+            left:100px;
+            top:0px;
+            }
+        }
+        .nav-bar-close{
+            font-size:30px;
+            display:block;
+            position:fixed;
+            top:0px;
+            right:0px;
+            color:black;
+            background-color: $color-white-2;
+            z-index:20;
+            padding:5px 125px 5px 10px;
+            transform: translateX(120%);
+            transition: transform linear 0.5s;
+        }
+    }
+    
+}
+@include responsive('super-small') {
+    #header__content{
+        position:fixed;
+        top:20px;
+        .nav-bar-btn{
+            position:absolute;
+            top:10px;
+        }
+        .image__header{
+            top:-20px;
+        }
+    }
+    #header__content{
+        .container{
+        max-width:376px;
+        }
+    }
+}

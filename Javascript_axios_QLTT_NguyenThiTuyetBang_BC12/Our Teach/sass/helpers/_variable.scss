@@ -1,0 +1,74 @@
+//color
+$color-pink-1: #b61984;
+$color-white-1: #f5f9fe;
+$color-white-2: #e2ebfc;
+$color-white-3: #fff;
+$color-blue-1: #1d365e;
+$color-blue-2: #2a73dd;
+$color-blue-3: #c9d8f4;
+$color-gray-1: #bdbdbd;
+
+//dark color
+$color-dark-2:#121212;
+$color-dark-3:#353536;
+$color-dark-4:#212121;
+
+$color-blue-4:#2196f3;
+
+
+
+//font size
+$fs-1: 14px;
+$fs-2: 15px;
+$fs-3: 16px;
+$fs-4: 70px;
+$fs-5: 1.6rem;
+$fs-6: 60px;
+$fs-7: 20px;
+$fs-8: 44px;
+
+//font weight
+$fw-1: 500;
+$fw-2: 600;
+$fw-3: 700;
+
+//letter spacing
+$ls-1: 0.015rem;
+$ls-2: 0.025rem;
+
+//Padding
+$pd-1: 25px;
+$pd-2: 225px;
+$pd-3: 13px;
+$pd-4: 44px;
+$pd-5: 100px;
+$pd-6: 8px;
+$pd-7: 60px;
+$pd-8: 150px;
+
+//Margin
+$mg-1: 30px;
+$mg-2: 20px;
+$mg-3: 70px;
+$mg-4: 60px;
+
+//border
+$bd-1: 2px;
+$bd-2: 8px;
+
+//break points
+$breakpoints: (
+    "extra-large": 1200px,
+    "large": 993px,
+    "medium": 769px,
+    "small": 576px,
+    "super-small":376px,
+);
+$res_320 : "only screen and (min-width: 376px) and (max-width: 576px)";
+$res_375 : "only screen and (min-width: 576px) and (max-width: 769px)";
+$res_425 : "only screen and (min-width: 769px) and (max-width:992px)";
+$res_992 : "only screen and (min-width: 992px) and (max-width: 1020px)";
+$res_1024 : "only screen and (min-width: 1020px) and (max-width: 1228px)";
+$res_1200 : "only screen and (min-width: 1228px)";
+$res_411: "only screen and (min-width: 376px) and (max-width: 411px)";
+$res_769: "only screen and (min-width: 411px) and (max-width: 576px)";
